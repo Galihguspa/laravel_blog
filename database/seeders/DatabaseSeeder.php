@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\Category;
+use App\Models\Post;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +16,68 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        //\App\Models\User::factory(10)->create();
+
+        User::create([
+            'name'      => 'Galih Gustika Prapenan',
+            'email'     => 'Galihdrm@Gmail.com',
+            'password'  => bcrypt('12345')
+        ]);
+
+        User::create([
+            'name'      => 'Septaiani',
+            'email'     => 'Septa@Gmail.com',
+            'password'  => bcrypt('12345')
+        ]);
+
+        Category::create([
+            'name' => 'Web Programming',
+            'slug' => 'web-programming',
+        ]);
+
+        Category::create([
+            'name' => 'Personal',
+            'slug' => 'personal',
+        ]);
+
+        Post::create([
+            'title' => 'Judul Pertama',
+            'slug'  => 'judul-pertama',
+            'excerpt' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+            'body'    =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae deserunt fuga debitis dolorem, ex eum quia voluptas possimus neque, quod, eaque ratione. Libero voluptatem impedit magnam alias repellendus quis blanditiis officia minima quisquam maiores rerum repellat, optio hic voluptas temporibus placeat cum ipsam vel ut. Repellat quas molestiae error quaerat quidem quam quod natus exercitationem autem ullam rem facere magni itaque dicta quis voluptate voluptatibus, dolorum perspiciatis explicabo ea. Accusantium, fuga fugit. Maiores, sint incidunt unde alias facilis voluptatum perferendis ipsum ratione expedita assumenda est quasi sunt tenetur nemo animi recusandae provident rerum officiis deleniti earum, officia commodi veniam. Delectus!',
+            'category_id' => 1,
+            'user_id' => 1
+
+        ]);
+
+        Post::create([
+            'title' => 'Judul Kedua',
+            'slug'  => 'judul-kedua',
+            'excerpt' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+            'body'    =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae deserunt fuga debitis dolorem, ex eum quia voluptas possimus neque, quod, eaque ratione. Libero voluptatem impedit magnam alias repellendus quis blanditiis officia minima quisquam maiores rerum repellat, optio hic voluptas temporibus placeat cum ipsam vel ut. Repellat quas molestiae error quaerat quidem quam quod natus exercitationem autem ullam rem facere magni itaque dicta quis voluptate voluptatibus, dolorum perspiciatis explicabo ea. Accusantium, fuga fugit. Maiores, sint incidunt unde alias facilis voluptatum perferendis ipsum ratione expedita assumenda est quasi sunt tenetur nemo animi recusandae provident rerum officiis deleniti earum, officia commodi veniam. Delectus!',
+            'category_id' => 1,
+            'user_id' => 1
+
+        ]);
+
+        Post::create([
+            'title' => 'Judul Ketiga',
+            'slug'  => 'judul-ketiga',
+            'excerpt' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+            'body'    =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae deserunt fuga debitis dolorem, ex eum quia voluptas possimus neque, quod, eaque ratione. Libero voluptatem impedit magnam alias repellendus quis blanditiis officia minima quisquam maiores rerum repellat, optio hic voluptas temporibus placeat cum ipsam vel ut. Repellat quas molestiae error quaerat quidem quam quod natus exercitationem autem ullam rem facere magni itaque dicta quis voluptate voluptatibus, dolorum perspiciatis explicabo ea. Accusantium, fuga fugit. Maiores, sint incidunt unde alias facilis voluptatum perferendis ipsum ratione expedita assumenda est quasi sunt tenetur nemo animi recusandae provident rerum officiis deleniti earum, officia commodi veniam. Delectus!',
+            'category_id' => 2,
+            'user_id' => 1
+
+        ]);
+
+        Post::create([
+            'title' => 'Judul Keempat',
+            'slug'  => 'judul-keempat',
+            'excerpt' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+            'body'    =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae deserunt fuga debitis dolorem, ex eum quia voluptas possimus neque, quod, eaque ratione. Libero voluptatem impedit magnam alias repellendus quis blanditiis officia minima quisquam maiores rerum repellat, optio hic voluptas temporibus placeat cum ipsam vel ut. Repellat quas molestiae error quaerat quidem quam quod natus exercitationem autem ullam rem facere magni itaque dicta quis voluptate voluptatibus, dolorum perspiciatis explicabo ea. Accusantium, fuga fugit. Maiores, sint incidunt unde alias facilis voluptatum perferendis ipsum ratione expedita assumenda est quasi sunt tenetur nemo animi recusandae provident rerum officiis deleniti earum, officia commodi veniam. Delectus!',
+            'category_id' => 2,
+            'user_id' => 2
+
+        ]);
     }
 }
