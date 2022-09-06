@@ -20,7 +20,7 @@ class PostController extends Controller
     {
         return view('post',[
             "title" => "Single Post",
-            'active'=> 'post',
+            'active'=> 'posts',
             "post"  => $post
         ]);
     }

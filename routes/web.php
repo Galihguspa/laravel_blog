@@ -20,7 +20,8 @@ use App\Models\User;
 
 Route::get('/', function () {
     return view('home', [
-        "title" => 'Home'
+        "title" => 'Home',
+        "active" => "home",
     ]);
 });
 
@@ -28,6 +29,7 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about', [
         "title" => "About",
+        "active" => "home",
         "name"  => "Galih Gustika P",
         "email" => "galihdrm@gmail.com",
         "image" => "galih.jpg"
@@ -82,6 +84,7 @@ Route::get('/categories/{category:slug}',function(Category $category){
 Route::get('/authors/{author:username}', function(User $author){
     return view('posts',[
         "title" => "Posts By Author : $author->name ",
+        "active" => "posts",
         "posts" => $author->posts->load('category','author'),
     ]);
 });
